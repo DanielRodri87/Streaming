@@ -8,9 +8,13 @@ class Program:
         self.home = Home()  
 
     def run(self):
-        self.home.start()  
-        self.home.close()  
+        window = self.home.menu_principal()  
+        while True:
+            event, values = window.read()
+            if event == sg.WINDOW_CLOSED:
+                break
+        window.close()  
         sys.exit()
 
 if __name__ == "__main__":
-    Program().run() 
+    Program().run()
