@@ -2,15 +2,18 @@ import PySimpleGUI as sg
 
 class Cadastro:
     def __init__(self) -> None:
-        self.window = self.oimundo()
+        self.window = self.tela_cadastro()
         
-    def oimundo(self):
+    def tela_cadastro(self):
         sg.theme('Default1')
         layout = [
-            [sg.Text('O cadastreo vai aqui')],
-            [sg.Button('OK')]
+            [sg.Text('Nome do Filme/Série: '), sg.InputText('')],
+            [sg.Text('Plataforma de Streaming: '), sg.InputText('')],
+            [sg.Text('Gênero: '), sg.InputText('')],
+            [sg.Text('Ano de Lançamento: '), sg.InputText('')],
+            [sg.Text('Avaliação: '), sg.InputText('')],
         ]
-        return sg.Window('Cadastrar', layout=layout, finalize=True)
+        return sg.Window('Cadastrar', layout=layout, finalize=True, size=(600, 600))
 
     def show(self):
         while True:
