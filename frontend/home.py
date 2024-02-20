@@ -1,7 +1,7 @@
 import PySimpleGUI as sg
 
 class Home:
-    def menu_principal(self):
+    def main_menu(self):
         sg.theme('Default1')
 
         layout = [

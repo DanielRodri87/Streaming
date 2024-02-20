@@ -8,7 +8,7 @@ class Program:
         self.home = Home()  
 
     def run(self):
-        window = self.home.menu_principal()  
+        window = self.home.main_menu()  
         while True:
             event, values = window.read()
             if event == sg.WINDOW_CLOSED:
