@@ -5,16 +5,10 @@ from frontend.home import Home
 
 class Program:
     def __init__(self):
-        self.home = Home()  
+        self.home = Home()
 
     def run(self):
-        window = self.home.main_menu()  
-        while True:
-            event, values = window.read()
-            if event == sg.WINDOW_CLOSED:
-                break
-        window.close()  
-        sys.exit()
+        self.home.run()
 
 if __name__ == "__main__":
     Program().run()
