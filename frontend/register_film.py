@@ -5,13 +5,23 @@ class Cadastro:
         self.window = self.tela_cadastro()
         
     def tela_cadastro(self):
-        sg.theme('Default1')
+        sg.theme('DefaultNoMoreNagging')
         layout = [
-            [sg.Text('Nome do Filme/Série: '), sg.InputText('')],
-            [sg.Text('Plataforma de Streaming: '), sg.InputText('')],
-            [sg.Text('Gênero: '), sg.InputText('')],
-            [sg.Text('Ano de Lançamento: '), sg.InputText('')],
-            [sg.Text('Avaliação: '), sg.InputText('')],
+            [sg.Frame('Dados do cliente e entrega (obrigatório)',
+                [
+                    [sg.Text("Nome do Filme/Série: ", background_color="#e0e0e0")],
+                    [sg.InputText(key="filme-serie", size=(115,2))],
+                    [sg.Text("Plataforma de Streaming: ", background_color="#e0e0e0")],
+                    [sg.InputText(key="-plataforma-", size=(115,2))],
+                    [sg.Text("Gênero: ", background_color="#e0e0e0")],
+                    [sg.InputText(key="-genero-", size=(115,2))],
+                    [sg.Text("Duração do Filme:", background_color="#e0e0e0")],
+                    [sg.InputText(key="-duracao-", size=(115,2), default_text="00:00:00")],
+                    [sg.Text("Avalie com uma nota entre 1 e 5:", background_color="#e0e0e0")],
+                    [sg.InputText(key="-nota-", size=(115,2))],
+                    
+                ], size=(800, 180), background_color="#e0e0e0"
+            )],
         ]
         return sg.Window('Cadastrar', layout=layout, finalize=True, size=(600, 600))
 
