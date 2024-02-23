@@ -18,9 +18,8 @@ class Home:
                         sg.Button("Deletar Filme", font=(None, 8), size=(11, 2), pad=(2, 0), key="deletar_filme"),
                         sg.Button("Sair", font=(None, 8), size=(11, 2), pad=(2, 0), key="sair"),
                     ],
-                ], border_width=2, background_color="#181818", size=(1366, 115), pad=(0,0), element_justification="center")
-            ],
-            # [sg.Image(filename="img\\foto.png", size=(500, 500), key="foto")],
+                ], border_width=2, background_color="#181818", size=(1366, 115), pad=(0,0), element_justification="center"
+            )],
             [sg.Text("Um produto desenvolvido por Daniel e Francinaldo® e licenciado para Pobre Flix.\nTelefone para suporte: 4002-8922\ndaniel.sousa @ufpi.edu.br e colocaemailaquinaldo@gmail.com",
                 font=(None, 10), justification="center", size=(1366, 3), pad=(2, 0))
             ]
@@ -33,7 +32,7 @@ class Home:
             if event == sg.WINDOW_CLOSED:
                 break
             elif event == "cadastrar_filme":
-                Cadastro().show()
+                Cadastro().show()  # Aqui chamamos a tela de cadastro
             elif event == "listar_filmes":
                 pass
             elif event == "editar_filme":
